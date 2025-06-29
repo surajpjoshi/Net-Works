@@ -68,10 +68,9 @@
     }
 
     .button:hover {
-      color: white; /* keep text white on hover */
+      color: white;
     }
 
-    /* Unique color buttons */
     .button-1 { border-color: #e6194B; }
     .button-1 .arrow { background: #e6194B; color: white; }
     .button-1:hover { background: #e6194B; }
@@ -151,6 +150,63 @@
     .button-16 .arrow { background: #aaffc3; color: black; }
     .button-16:hover { background: #aaffc3; }
     .button-16:hover .arrow { background: black; color: #aaffc3; }
+
+    .button-17 { border-color: #ffd8b1; }
+    .button-17 .arrow { background: #ffd8b1; color: black; }
+    .button-17:hover { background: #ffd8b1; }
+    .button-17:hover .arrow { background: black; color: #ffd8b1; }
+
+    .button-18 { border-color: #000075; }
+    .button-18 .arrow { background: #000075; color: white; }
+    .button-18:hover { background: #000075; }
+    .button-18:hover .arrow { background: white; color: #000075; }
+
+    .button-19 { border-color: #808000; }
+    .button-19 .arrow { background: #808000; color: white; }
+    .button-19:hover { background: #808000; }
+    .button-19:hover .arrow { background: white; color: #808000; }
+
+    .button-20 { border-color: #a9a9a9; }
+    .button-20 .arrow { background: #a9a9a9; color: black; }
+    .button-20:hover { background: #a9a9a9; }
+    .button-20:hover .arrow { background: black; color: #a9a9a9; }
+
+    /* Dropdown styles */
+    .button-with-dropdown {
+      position: relative;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      top: 110%;
+      left: 0;
+      background-color: #1e293b;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      z-index: 1000;
+      min-width: 180px;
+      text-align: left;
+    }
+
+    .dropdown-content a {
+      display: block;
+      padding: 10px 15px;
+      color: white;
+      text-decoration: none;
+      font-size: 14px;
+      border-bottom: 1px solid #333;
+    }
+
+    .dropdown-content a:last-child {
+      border-bottom: none;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #334155;
+    }
+
   </style>
 </head>
 <body>
@@ -162,10 +218,19 @@
   <div class="button-container">
     <a href="https://docs.google.com/document/d/1Dab6AFiAPmpBuURx9hp0Z84JFNkYRDDCzovi2XpAH4A/edit?tab=t.f4m1f3m8hvgt#heading=h.mpg9pzjzpjfq" class="button button-9" target="_blank"><span>CheetSheet</span><div class="arrow">➡</div></a>
     <a href="https://docs.google.com/document/d/1Dab6AFiAPmpBuURx9hp0Z84JFNkYRDDCzovi2XpAH4A/edit?tab=t.kub939qwfheh#heading=h.7o1mh0r2rbr0" class="button button-14" target="_blank"><span>Interview Questions</span><div class="arrow">➡</div></a>
-    <a href="https://docs.google.com/document/d/1t5eJ-D9lqfmlJx0aTGXG0atmLXXRaksXYemV1yoQAkg/edit?tab=t.0" class="button button-15" target="_blank"><span>ISE</span><div class="arrow">➡</div></a>
+
+    <!-- ISE Button with Dropdown -->
+    <div class="button-with-dropdown">
+      <div class="button button-15" onclick="toggleDropdown()" style="user-select: none;"><span>ISE</span><div class="arrow">➡</div></div>
+      <div id="iseDropdown" class="dropdown-content">
+        <a href="https://www.udemy.com/course/cisco-ise/" target="_blank">Udemy</a>
+        <a href="https://your-link-to-my-notes.com" target="_blank">My Notes</a>
+      </div>
+    </div>
+
     <a href="https://docs.google.com/document/d/1ui3FYbs4FirJtf0dyuIeLNgFnvkYNYYubO1CePatwBY/edit?tab=t.0" class="button button-1" target="_blank"><span>SD-WAN</span><div class="arrow">➡</div></a>
     <a href="https://docs.google.com/document/d/1IQ4bOpbv7e7UrvAu_qgqLGi1zUW-dw3Q7ZLwZ9DydGI/edit?tab=t.0" class="button button-2" target="_blank"><span>Zscaler</span><div class="arrow">➡</div></a>
-    <a href="https://docs.google.com/document/d/1Dab6AFiAPmpBuURx9hp0Z84JFNkYRDDCzovi2XpAH4A/edit?tab=t.szed2qjm3b5m#heading=h.u4qvpymq4o3j" class="button button-3" target="_blank"><span>OSPF</span><div class="arrow">➡</div></a>
+	  <a href="https://docs.google.com/document/d/1Dab6AFiAPmpBuURx9hp0Z84JFNkYRDDCzovi2XpAH4A/edit?tab=t.szed2qjm3b5m#heading=h.u4qvpymq4o3j" class="button button-3" target="_blank"><span>OSPF</span><div class="arrow">➡</div></a>
     <a href="https://docs.google.com/document/d/1Dab6AFiAPmpBuURx9hp0Z84JFNkYRDDCzovi2XpAH4A/edit?tab=t.0#heading=h.hdwuxg5sl1dj" class="button button-4" target="_blank"><span>BGP</span><div class="arrow">➡</div></a>
     <a href="https://docs.google.com/document/d/1Dab6AFiAPmpBuURx9hp0Z84JFNkYRDDCzovi2XpAH4A/edit?tab=t.7owxuheez75f#heading=h.bonjhp77x429" class="button button-5" target="_blank"><span>Wireless</span><div class="arrow">➡</div></a>
     <a href="https://docs.google.com/document/d/1Dab6AFiAPmpBuURx9hp0Z84JFNkYRDDCzovi2XpAH4A/edit?tab=t.7b9p7r8hdfat" class="button button-6" target="_blank"><span>Self</span><div class="arrow">➡</div></a>
@@ -177,7 +242,23 @@
     <a href="https://console.cloud.google.com/compute/instances?authuser=3&cloudshell=true&inv=1&invt=Ab0hRw&project=metal-voyager-463408-b1" class="button button-12" target="_blank"><span>GCP_EVENG</span><div class="arrow">➡</div></a>
     <a href="http://34.125.141.9/#/login" class="button button-13" target="_blank"><span>EVENG-LAB</span><div class="arrow">➡</div></a>
     <a href="https://github.com/surajpjoshi/Net-Works/edit/master/index.html" class="button button-16" target="_blank"><span>HTML Code</span><div class="arrow">➡</div></a>
-    <a href="https://surajpjoshi.github.io/Site-Network-Profile/" class="button button-14" target="_blank"><span>Site-Network-Profile</span><div class="arrow">➡</div></a>    
- </div>
+    <a href="https://surajpjoshi.github.io/Site-Network-Profile/" class="button button-14" target="_blank"><span>Site-Network-Profile</span><div class="arrow">➡</div></a>
+    <!-- Add the rest of your buttons here (same as before)... -->
+  </div>
+
+  <script>
+    function toggleDropdown() {
+      const dropdown = document.getElementById("iseDropdown");
+      dropdown.style.display = dropdown.style.display === "block" ? "none" : "block";
+
+      // Close when clicking outside
+      document.addEventListener("click", function handleClickOutside(event) {
+        if (!event.target.closest(".button-with-dropdown")) {
+          dropdown.style.display = "none";
+          document.removeEventListener("click", handleClickOutside);
+        }
+      });
+    }
+  </script>
 </body>
 </html>
