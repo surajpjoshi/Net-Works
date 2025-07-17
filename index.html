@@ -245,7 +245,7 @@
 	  <!-- EVENG IMAGES -->
     <div class="button-with-dropdown">
       <div class="button button-15" onclick="toggleDropdown()" style="user-select: none;"><span>EVENG IMAGES</span><div class="arrow">➡</div></div>
-      <div id="iseDropdown" class="dropdown-content">
+      <div id="eveDropdown" class="dropdown-content">
         <a href="https://drive.labhub.eu.org/0:/" target="_blank">Labhub</a>
         <a href="https://github.com/hegdepavankumar/Cisco-Images-for-GNS3-and-EVE-NG/tree/main?tab=readme-ov-file" target="_blank">On Github</a>
       </div>
@@ -261,6 +261,10 @@
   <script>
     function toggleDropdown() {
       const dropdown = document.getElementById("iseDropdown");
+      dropdown.style.display = dropdown.style.display === "block" ? "none" : "block";
+
+    function toggleDropdown() {
+      const dropdown = document.getElementById("eveDropdown");
       dropdown.style.display = dropdown.style.display === "block" ? "none" : "block";
 
       // Close when clicking outside
